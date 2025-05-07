@@ -73,4 +73,3 @@ Cuantificar la relación entre el rendimiento en el examen Saber 11 (segunda apl
 
 
 
-Por ahora este readme
