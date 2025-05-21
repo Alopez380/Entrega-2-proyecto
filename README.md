@@ -41,6 +41,9 @@ Se trabajó con más de 4.7 millones de registros del ICFES (2017–2024), y se 
 6. Evaluación y discusión  
    - Pruebas ANOVA unidireccionales para variables categóricas.  
    - Análisis de desigualdades por nivel socioeconómico, acceso a internet, tipo de colegio, entre otros.
+  
+7. enlace de los datos publicos
+   - https://drive.google.com/drive/folders/1ijVkNUVz5uduY9Um0ZmDbbIVAAYPfp1b?usp=sharing
 
 ## 🔍 Hallazgos clave
 
