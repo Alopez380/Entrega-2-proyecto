@@ -1,75 +1,54 @@
-# Proyecto de Aplicación: Análisis de Saber 11 y Conectividad en Colombia (2017–2024)
+# 📊 Análisis de Factores Socioeconómicos y su Impacto en el Desempeño Académico (Saber 11)
 
-## 1. Objetivo
-Cuantificar la relación entre el rendimiento en el examen Saber 11 (segunda aplicación, calendario A) y la cobertura de internet fijo a nivel municipal, controlando por variables socioeconómicas y de recursos TIC del hogar, para orientar decisiones de inversión en infraestructura y educación.
+## 🧠 Descripción del Proyecto
 
----
+Este proyecto tiene como objetivo identificar y analizar cómo las condiciones socioeconómicas, familiares, tecnológicas y escolares de los estudiantes en Colombia influyen en su desempeño en las pruebas Saber 11. Utilizando un enfoque de **procesamiento de datos a gran escala, el análisis combina estadística descriptiva, inferencial y técnicas de aprendizaje automático supervisado y no supervisado.
 
-## 2. Contexto
-- *Problema*: Persisten brechas significativas en puntajes del Saber 11 entre municipios con distinta conectividad y condiciones socioeconómicas.  
-- *Ámbito temporal*: Segunda aplicación anual, calendario A, de 2017 a 2024.  
-- *Enfoque*: Panel municipal que integra puntajes Saber 11, ISNI, recursos TIC en el hogar y penetración de internet fijo (datos.gov.co).
----
+Se trabajó con más de 4.7 millones de registros del ICFES (2017–2024), y se implementaron herramientas modernas de Big Data y análisis predictivo para extraer patrones y generar recomendaciones de política educativa con base en evidencia empírica.
 
-## 3. Fases del Proyecto
+## 🛠 Herramientas y Tecnologías
 
-### 3.A Fase Inicial  
-- *Selección de datos*:  
-  - Archivos .txt públicos de ICFES (2017–2024, aplicación 2).    
-- *Exploración preliminar*:  
-  - Estadísticos básicos, histogramas y boxplots.  
-  - Correlaciones bivariadas y rankings municipales.
+- Python 3.10+
+- Apache Spark (PySpark): procesamiento distribuido de grandes volúmenes de datos.
+- Databricks: entorno colaborativo para manipulación y análisis de datos masivos.
+- scikit-learn: modelado predictivo, regresiones regularizadas y clustering (K-Means).
+- Pandas / NumPy: manipulación de datos.
+- Matplotlib / Seaborn: visualización de datos.
+- Jupyter Notebooks / Databricks Notebooks: desarrollo iterativo del análisis.
 
-### 3.B Preparación de Datos  
-- *Filtrado*: Sólo calendario A, periodo termina en 2.  
-- *Selección y renombrado*: 24 variables clave (puntajes, ISNI, TIC, colegio).  
-- *Codificación*:  
-  - Ordinales (horas de internet, estrato, libros).  
-  - Binarias (hogar con PC/internet).  
-- *Imputación*:  
-  - Medianas municipales → global en dedicación internet, puntajes e ISNI.  
-  - NAs en educación parental → “DESCONOCIDO”/“OTROS”.  
-- *Agregación*: Panel municipio–año y merge con penetración fija.
+## 📌 Etapas del Proyecto (Metodología CRISP-DM)
 
-### 3.C Implementación de Modelos  
-- *Supervisado*:  
-  1. *Elastic Net* 
-  2. *Gradient Boosting Regressor*
-  - *Métricas*: RMSE, R².  
-- *No supervisado*:  
-  1. *PCA* (n=2) → reducción de dimensiones y biplot.  
-  2. *K-means (k=4)* → segmentos municipales; silhouette score para validación.
+1. Entendimiento del negocio  
+   Identificación del problema educativo y definición del objetivo analítico: mejorar la comprensión de los factores que afectan el desempeño académico.
 
----
+2. Entendimiento de los datos  
+   Unificación de datos Saber 11 entre 2017–2024. Exploración de variables sociodemográficas, institucionales y de rendimiento.
 
-## 4. Librerías y Herramientas  
-- *Pandas & NumPy*: manipulación de datos.  
-- *PySpark*: lectura / procesamiento escalable.  
-- *scikit-learn*: pipelines, Elastic Net, GBR, PCA, K-means.  
-- *Matplotlib / Seaborn*: visualizaciones.  
-- *GeoPandas / Folium* (opcional): mapas coropléticos.  
-- *Airflow / Prefect* (opcional): orquestación ETL.
+3. Preparación de los datos  
+   - Limpieza, imputación y estandarización de más de 4 millones de registros.  
+   - Reducción a variables clave: 35 columnas seleccionadas.
 
----
+4. Modelado predictivo (supervisado)  
+   - Implementación de regresión Ridge para predecir el puntaje global.  
+   - Mejores métricas obtenidas:  
+     - RMSE ≈ 42  
+     - R² ≈ 0.32
 
+5. Segmentación (no supervisado)  
+   - Clustering con K-Means (k=4) para agrupar estudiantes según sus patrones de desempeño.  
+   - Visualización de perfiles estudiantiles diferenciados.
 
-## 5. Conclusiones y Observaciones  
-- *Brecha urbano-rural*:
-- *Elastic Net*:
-- *GBR*:
-- *Clusters*:
-- *Tendencia histórica*:
+6. Evaluación y discusión  
+   - Pruebas ANOVA unidireccionales para variables categóricas.  
+   - Análisis de desigualdades por nivel socioeconómico, acceso a internet, tipo de colegio, entre otros.
 
----
+## 🔍 Hallazgos clave
 
-## 7. Entregables  
-- *Notebooks Jupyter* (notebooks/): EDA, modelado supervisado, no supervisado y análisis temporal.  
-- *Scripts Python* (src/): ingesta, limpieza, pipelines ML.  
-- *Dataset procesado* (data/processed/): Parquet/CSV limpio y panel final.  
-- *Presentación* (PDF) y *informe técnico* (PDF).  
-
----
-
+- Existe una brecha significativa de rendimiento académico entre estudiantes según su nivel socioeconómico.
+- El acceso a internet, computadores y libros en el hogar está fuertemente relacionado con puntajes más altos.
+- Las características del colegio (oficial/privado, jornada, ubicación) también influyen de forma importante.
+- El modelo predictivo, aunque con capacidad moderada, permite priorizar intervenciones basadas en datos.
+- El clustering reveló perfiles estudiantiles diferenciados, útiles para políticas focalizadas.
 
 
 
