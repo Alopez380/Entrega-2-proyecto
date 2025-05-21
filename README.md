@@ -2,7 +2,7 @@
 
 ## 🧠 Descripción del Proyecto
 
-Este proyecto tiene como objetivo identificar y analizar cómo las condiciones socioeconómicas, familiares, tecnológicas y escolares de los estudiantes en Colombia influyen en su desempeño en las pruebas Saber 11. Utilizando un enfoque de **procesamiento de datos a gran escala, el análisis combina estadística descriptiva, inferencial y técnicas de aprendizaje automático supervisado y no supervisado.
+Este proyecto tiene como objetivo identificar y analizar cómo las condiciones socioeconómicas, familiares, tecnológicas y escolares de los estudiantes en Colombia influyen en su desempeño en las pruebas Saber 11. Utilizando un enfoque de procesamiento de datos a gran escala, el análisis combina estadística descriptiva, inferencial y técnicas de aprendizaje automático supervisado y no supervisado.
 
 Se trabajó con más de 4.7 millones de registros del ICFES (2017–2024), y se implementaron herramientas modernas de Big Data y análisis predictivo para extraer patrones y generar recomendaciones de política educativa con base en evidencia empírica.
 
